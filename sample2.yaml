@@ -2,14 +2,16 @@
   hosts: hostall
   vars:
     movie: "Batman" #This is a globle variable
-  vars_prompt:
+    
+  vars_prompt: #This is a prompt variable
     - name: "movie"
       prompt: "Enter the movie name"
   tasks:
     - name: this is first task
       debug:
         msg: "The {{ movie }} movie is good"
-    - name: this is second task
+
+    - name: this is second task #Register variable
       command: whoami
       register: result
     - name: result of second task
