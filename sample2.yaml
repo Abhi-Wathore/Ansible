@@ -1,0 +1,17 @@
+- name: Prompt and Register variables.
+  hosts: hostall
+  vars:
+    movie: "Batman" #This is a globle variable
+  vars_prompt:
+    - name: "movie"
+      prompt: "Enter the movie name"
+  tasks:
+    - name: this is first task
+      debug:
+        msg: "The {{ movie }} movie is good"
+    - name: this is second task
+      command: whoami
+      register: result
+    - name: result of second task
+      debug:
+        msg: "The result of second task is {{ result.stdout }}"  
