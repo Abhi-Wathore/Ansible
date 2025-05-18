@@ -2,6 +2,8 @@
   hosts: hostall
   vars:
     movie: "Batman" #This is a globle variable
+  vars_files:
+    - ./var.txt
   tasks:
     - name: this is first task
       debug:
