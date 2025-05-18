@@ -1,4 +1,4 @@
-- name: Local and globle variables
+- name: Local and globle variables.
   hosts: hostall
   vars:
     movie: "Batman" #This is a globle variable
@@ -16,3 +16,4 @@
     - name: this is third task 
       debug:
         msg: "The {{ movie }} movie is good"
+      
