@@ -1,16 +1,18 @@
 - name: Local and globle variables
   hosts: hostall
   vars:
-    movie: "Batman"
+    movie: "Batman" #This is a globle variable
   tasks:
     - name: this is first task
       debug:
         msg: "The {{ movie }} movie is good"
-    - name: this is second task
-      debug:
+
+    - name: this is second task 
+      debug: 
         msg: "The {{ movie }} movie is good"
-      vars:
+      vars: #Here we are overriding variable movie globle to local.
         movie: "Avengers"
-    - name: this is third task
+
+    - name: this is third task 
       debug:
         msg: "The {{ movie }} movie is good"
