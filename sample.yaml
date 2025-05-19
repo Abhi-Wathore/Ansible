@@ -11,3 +11,6 @@
         msg: "The {{ movie }} movie is good"
         set_fact:
           movie: "Thor"
+    - name: this is third task
+      debug:
+        msg: "The {{ movie }} movie is good"
