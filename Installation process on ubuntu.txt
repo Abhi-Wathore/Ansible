@@ -1,0 +1,28 @@
+✅ Step-by-Step: Install Ansible on Ubuntu
+
+1. Update the system
+
+sudo apt update
+
+sudo apt upgrade -y
+
+
+2. Install dependencies
+
+sudo apt install software-properties-common -y
+
+
+3. Add Ansible PPA
+
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+
+
+4. Install Ansible
+
+sudo apt install ansible -y
+
+
+5. Verify installation
+
+ansible --version
+
