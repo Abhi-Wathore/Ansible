@@ -1,4 +1,4 @@
-- name: Loop in YAML
+- name: Loop in Ansible
   host: all
   tasks:
     - name: Print list items  # Print items in a list
@@ -20,4 +20,23 @@
           - git
           - vim
           - wget
-        
+
+    - name: Create users  # Create multiple users
+      user:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - Abhishek
+        - Gaurav
+        - Rushabh
+
+    - name: Create users with bash shell only  # Create users with specific shell (conditional loop)
+      user:
+        name: "{{ item.name }}"
+        shell: "{{ item.shell }}"
+      loop:
+        - { name: 'alice', shell: '/bin/bash' }
+        - { name: 'bob', shell: '/bin/zsh' }
+        - { name: 'carol', shell: '/bin/bash' }
+      when: item.shell == '/bin/bash'
+   
