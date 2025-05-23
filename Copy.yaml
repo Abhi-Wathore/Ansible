@@ -1,0 +1,12 @@
+- name: Copy module in Ansible
+  hosts: all
+  tasks:
+    - name: install apache2
+      apt:
+        name: apache2
+        state: present
+
+    - name: Copy file to remote server
+      copy:
+        src: ./index.html
+        dest: /var/www/html/index.html
