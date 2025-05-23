@@ -1,0 +1,23 @@
+- name: Loop in YAML
+  host: all
+  tasks:
+    - name: Print list items  # Print items in a list
+      debug:
+        msg: "{{ item }}"
+      loop:
+        - Apple
+        - Banana
+        - Orange
+        - Grape
+        - Mango
+
+    - name: install packages  # Install packages
+      package:
+        name: "{{item}}"
+        state: present
+        loop:
+          - httpd
+          - git
+          - vim
+          - wget
+        
