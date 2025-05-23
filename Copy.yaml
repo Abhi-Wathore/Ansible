@@ -1,5 +1,6 @@
 - name: Copy module in Ansible
   hosts: all
+  become: true
   tasks:
     - name: install apache2
       apt:
@@ -10,3 +11,9 @@
       copy:
         src: ./index.html
         dest: /var/www/html/index.html
+
+    - name: start apache2 service
+      service:
+        name: apache2
+        state: restarted
+        enabled: true    
