@@ -6,6 +6,10 @@
   debug:
     msg: "This is a task in my-role"
 
+- name: print a message from vars
+  debug:
+    msg: "{{ msg }}"     
+
 - name: install a package
   package:
     name: "{{pkg}}"
