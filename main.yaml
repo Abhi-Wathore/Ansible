@@ -1,0 +1,5 @@
+- name: testing my-role
+  hosts: all
+  become: true
+  roles:
+    - my-role

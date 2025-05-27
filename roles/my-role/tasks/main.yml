@@ -1,3 +1,12 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # tasks file for my-role
+
+- name: print a message
+  debug:
+    msg: "This is a task in my-role"
+
+- name: install a package
+  package:
+    name: "{{pkg}}"
+    state: present
