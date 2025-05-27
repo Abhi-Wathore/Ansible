@@ -1,5 +1,5 @@
 - name: testing my-role
-  hosts: all
+  hosts: localhost
   become: true
   roles:
     - my-role
